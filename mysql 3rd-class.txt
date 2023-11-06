@@ -1,0 +1,164 @@
+mysql 		3rd class
+
+
+create table degree(
+id int ,
+fname text,
+age int,
+branch varchar(255),
+batch varchar(255),
+unique(id)
+);
+
+
+
+insert into degree values
+(1,"sharan",23,'cs','2023'),
+(2,"viran",24,'mech','2023'),
+(3,"maran",25,'civil','2023'),
+(4,"shaam",23,'ec','2023');
+
+insert into degree values (5,"shaam",23,'ec','2023'); error
+
+
+create table degree(
+id int Auto-increment,
+fname text,
+age int,
+branch varchar(255),
+batch varchar(255),
+unique(id)
+);
+
+if i give auto-increment so we need use for that column should be use constrains...id is unique 
+
+
+
+insert into degree(fname,age,branch,batch) values
+("sharan",23,'cs','2023'),
+("viran",24,'mech','2023'),
+("maran",25,'civil','2023'),
+("shaam",23,'ec','2023');
+
+insert into degree values (5,"shaam",23,'ec','2023');
+ it will add to table  
+ 
+alter table degree auto-increment=15;
+
+
+insert into degree(fname,age) values
+("ran",23,);
+
+select * from degree;
+
+
+alter table degree modefy column batch varchar()not null default '2023';
+
+to do default no null values within column
+
+ 
+insert into degree(fname,age,branch,batch) values
+('ramesh',22);
+
+after this branch is null
+ 
+ 
+ check constrains
+ 
+ 
+create table degree(
+id int not null auto_increment ,
+fname text,
+age int,
+branch varchar(255),
+batch varchar(255),
+unique(id),
+check(age>=18)
+);
+ 
+ insert into degree(fname,age,branch,batch) values
+("sharan",23,'cs','2023'),
+("viran",24,'mech','2023'),
+("maran",25,'civil','2023'),
+("shaam",23,'ec','2023');
+
+
+primary key
+
+ 
+create table team(
+
+fname varchar(255),
+lname varchar(255),
+age int,
+branch varchar(255),
+batch varchar(255),
+constraint full_name primary key(fname,lname)
+);
+ 
+ here fname and lname are primary key feild
+
+ insert into team(fname,lname,age,branch,batch) values
+("rohit","sharma",23,'cs','2023'),
+("kl","rahul",34,'cs','2023'),
+("virat","kholi",31,'cs','2023')
+;
+
+e-commerse
+
+--tables
+ 
+customer -cid,cname,email
+product --pid,pname,price
+transction--tid,cid,pid
+
+
+cid,pid and tid are primary key
+
+
+
+
+create table customer(
+customer_id varchar(255)  auto_increment,
+customer_name varchar(255),
+email varchar(255),
+primary key(customer_id)
+);
+
+insert into customer(customer_name,email) values
+("sharan","sharan@gmail.com"),
+("rahul","rahul@gmail.com"),
+("shaam","shaam@gmail.com"),
+("ram","ram@gmail.com");
+
+
+create table product (
+product_id varchar(255) auto_increment ,
+primary key(product_id),
+product_name varchar(255),
+price int
+);
+
+insert into product(product_name,price) values
+('laptop',30000),
+('keyboard',1000),
+('mouse',300);
+
+create table transction (
+
+transction_id varchar(255) ,
+primary key(transction_id),
+customer_id varchar(255) ,
+product_id varchar(255) 
+);
+
+insert into transction values
+('A245','1','12'),
+('A246','2','34'),
+('BC247','3','23');
+
+
+
+
+
+
