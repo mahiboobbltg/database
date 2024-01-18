@@ -1,0 +1,80 @@
+
+
+
+
+
+
+
+
+
+select cid from transction where tid=3;
+ select customer_name from customer where cid=3;
+ select customer_name from customer where cid=3;
+ 
+ 
+ 
+ select * from product where pid=(select pid transction where tid=2);
+ 
+ select * from product where pid=(select pid from transtion where tid=3);
+ 
+ 
+ foreign  key
+ 
+create table transaction (
+tid int,
+primary key(tid),
+cid int,
+pid int,
+foreign  key(pid) references product(pid),
+foreign  key(cid) references customer(cid)
+);
+
+insert into transaction values
+
+(1,2,3),
+(2,2,3),
+(3,1,3),
+(4,3,2);
+
+
+delete from product where pid=4;
+
+
+on delete CASCADE---it will delete product details 
+ 
+create table transaction (
+tid int,
+primary key(tid),
+cid int,
+pid int,
+foreign  key(pid) references product(pid) on delete CASCADE,
+foreign  key(cid) references customer(cid) on delete CASCADE
+);
+
+delete from product where pid=4;
+
+
+drop database d-name;  to delete database
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

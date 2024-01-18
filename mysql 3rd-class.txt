@@ -104,7 +104,7 @@ constraint full_name primary key(fname,lname)
 ("virat","kholi",31,'cs','2023')
 ;
 
-e-commerse
+ecom     database
 
 --tables
  
@@ -119,10 +119,10 @@ cid,pid and tid are primary key
 
 
 create table customer(
-customer_id varchar(255)  auto_increment,
+cid int  auto_increment,
 customer_name varchar(255),
 email varchar(255),
-primary key(customer_id)
+primary key(cid)
 );
 
 insert into customer(customer_name,email) values
@@ -133,8 +133,8 @@ insert into customer(customer_name,email) values
 
 
 create table product (
-product_id varchar(255) auto_increment ,
-primary key(product_id),
+pid int auto_increment ,
+primary key(pid),
 product_name varchar(255),
 price int
 );
@@ -146,16 +146,17 @@ insert into product(product_name,price) values
 
 create table transction (
 
-transction_id varchar(255) ,
-primary key(transction_id),
-customer_id varchar(255) ,
-product_id varchar(255) 
+tid int,
+primary key(tid),
+cid int,
+pid int 
 );
 
 insert into transction values
-('A245','1','12'),
-('A246','2','34'),
-('BC247','3','23');
+
+(1,2,3),
+(2,2,3),
+(3,3,2);
 
 
 
